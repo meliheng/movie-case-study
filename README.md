@@ -28,4 +28,4 @@ flutter pub get
     `
 ## Screeenshots
 
-![1](https://github.com/meliheng/movieapp/blob/main/assets/images/1.png) ![2](https://github.com/meliheng/movieapp/blob/main/assets/images/2.png) ![3](https://github.com/meliheng/movieapp/blob/main/assets/images/3.png)
+![](https://github.com/meliheng/movie-case-study/blob/main/assets/screen_shots/1.png|height=10) ![2](https://github.com/meliheng/movie-case-study/blob/main/assets/screen_shots/2.png) ![3](https://github.com/meliheng/movie-case-study/blob/main/assets/screen_shots/3.png)
