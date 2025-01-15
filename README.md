@@ -52,3 +52,28 @@ This package allows you to manage environment variables securely. It is used to 
 
 ### 5. **`equatable`**
 This package is used to simplify equality checks. It ensures that objects are compared based on their properties instead of their memory addresses. In this project, it is particularly useful for comparing `Bloc` states and events.
+
+---
+
+## Architecture
+
+The project follows the principles of **Clean Architecture**, which divides the codebase into distinct layers, each with a specific responsibility:
+
+1. **Domain Layer**:
+    - Contains the core business logic of the application.
+    - Includes `Entities`, `Use Cases`, and interfaces for repositories.
+
+2. **Data Layer**:
+    - Responsible for data handling, such as API calls or local storage.
+    - Implements the repository interfaces defined in the domain layer.
+    - Includes `Models` and `Data Sources`.
+
+3. **Presentation Layer**:
+    - Manages the UI and user interaction.
+    - Uses `Bloc` for state management and contains widgets and screens.
+
+4. **Core Layer**:
+    - Provides shared functionality and utility classes used across multiple layers.
+    - Includes constants, extensions and common configurations to reduce code duplication and ensure consistency throughout the app.
+
+By adhering to Clean Architecture, the app achieves better modularity, testability, and scalability.
