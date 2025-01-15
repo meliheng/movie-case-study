@@ -17,9 +17,9 @@ git clone https://github.com/meliheng/movieapp.git
 flutter pub get
     `
     
-5. Add your own Movie Api Key in .env file at the project root:
+5. Create .env file at the project root:
 
-
+    Add your own movie api key like MOVIE_API_KEY = 'api key'
 
 44. Open an emulator and run the project:
     
