@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_case/domain/entities/movie_ui_model.dart';
 import 'package:movie_case/domain/usecases/get_movies.dart';
+import 'package:rxdart/transformers.dart';
 
 part 'movies_event.dart';
 part 'movies_state.dart';
@@ -13,7 +14,14 @@ final class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   MoviesBloc(this.getMoviesUseCase) : super(MoviesLoading()) {
     on<FetchMovies>(_onFetchMovies);
-    on<SearchMovies>(_onSearchMovies);
+    on<SearchMovies>(
+      _onSearchMovies,
+      transformer: (events, mapper) {
+        return events
+            .debounceTime(const Duration(seconds: 1))
+            .switchMap(mapper);
+      },
+    );
     on<PageChangedEvent>(_onPageChanged);
     add(FetchMovies());
   }
